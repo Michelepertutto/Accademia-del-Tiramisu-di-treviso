@@ -47,8 +47,8 @@ const App: React.FC = () => {
         absolute inset-0 transition-opacity duration-500 ease-in-out 
         ${currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'} 
         overflow-y-auto overflow-x-hidden pb-36 md:pb-0
-        print:relative print:opacity-100 print:z-10 print:visible print:h-screen print:w-full print:flex print:flex-col print:justify-center print:items-center print:p-8 print:break-after-page print:overflow-hidden
-    `}>
+        print:relative print:opacity-100 print:z-10 print:visible print:h-screen print:w-full print:flex print:flex-col print:justify-center print:items-center print:break-after-page print:overflow-hidden
+    `} style={{ zoom: '0.75' }}>
       <Component isActive={currentSlide === index} />
     </div>
   );
