@@ -47,7 +47,7 @@ const App: React.FC = () => {
         absolute inset-0 transition-opacity duration-500 ease-in-out 
         ${currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'} 
         overflow-y-auto overflow-x-hidden pb-36 md:pb-0
-        print:relative print:opacity-100 print:z-10 print:visible print:h-auto print:pb-0 print:overflow-visible print:block
+        print:relative print:opacity-100 print:z-10 print:visible print:h-auto print:pb-0 print:overflow-visible print:block print:break-after-page print:min-h-screen
     `}>
       <Component isActive={currentSlide === index} />
     </div>
@@ -55,16 +55,16 @@ const App: React.FC = () => {
 
   return (
     <div className="w-full h-screen relative bg-coffee-900 text-cream-50 overflow-hidden font-sans selection:bg-amber-500 selection:text-white print:h-auto print:overflow-visible">
-      
+
       {/* Global Print Button - Only visible on first slide */}
       {currentSlide === 0 && (
-        <button 
-            onClick={() => window.print()}
-            className="absolute top-6 right-6 z-[60] flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-cream-50 rounded-full backdrop-blur-sm transition-all text-sm font-sans group print:hidden cursor-pointer shadow-lg border border-white/10"
-            title="Stampa Presentazione"
+        <button
+          onClick={() => window.print()}
+          className="absolute top-6 right-6 z-[60] flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-cream-50 rounded-full backdrop-blur-sm transition-all text-sm font-sans group print:hidden cursor-pointer shadow-lg border border-white/10"
+          title="Stampa Presentazione"
         >
-            <Printer size={18} className="group-hover:scale-110 transition-transform"/>
-            <span className="hidden md:inline">Salva PDF</span>
+          <Printer size={18} className="group-hover:scale-110 transition-transform" />
+          <span className="hidden md:inline">Salva PDF</span>
         </button>
       )}
 
@@ -73,7 +73,7 @@ const App: React.FC = () => {
         {/* 1. Intro */}
         {renderSlide(0, CoverSlide)}
         {renderSlide(1, VisionSlide)}
-        
+
         {/* 2. Audit (The Problem & Assets) */}
         {renderSlide(2, AuditIntroSlide)}
         {renderSlide(3, AuditAssetsSlide)}
@@ -82,7 +82,7 @@ const App: React.FC = () => {
         {/* 3. Strategy (The Solution) */}
         {renderSlide(5, StrategyIntroSlide)}
         {renderSlide(6, StrategyGuideSlide)}
-        
+
         {/* 4. Experience/Courses */}
         {renderSlide(7, CoursesIntroSlide)}
         {renderSlide(8, CourseDigitalSlide)}
@@ -106,11 +106,11 @@ const App: React.FC = () => {
 
       {/* Navigation Controls - Hidden on print */}
       <div className="print:hidden">
-        <Controls 
-            currentSlide={currentSlide} 
-            totalSlides={TOTAL_SLIDES} 
-            onNext={nextSlide} 
-            onPrev={prevSlide} 
+        <Controls
+          currentSlide={currentSlide}
+          totalSlides={TOTAL_SLIDES}
+          onNext={nextSlide}
+          onPrev={prevSlide}
         />
       </div>
     </div>
