@@ -233,8 +233,8 @@ export const CourseLiveSlide: React.FC<SlideProps> = ({ isActive }) => {
                             <div className="bg-white px-3 py-1.5 rounded-md shadow-lg hover:scale-105 transition-transform cursor-pointer" title="TripAdvisor">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/TripAdvisor_Logo.svg/1024px-TripAdvisor_Logo.svg.png" alt="TripAdvisor" className="h-6 w-auto object-contain" />
                             </div>
-                            <div className="bg-white px-3 py-1.5 rounded-md shadow-lg hover:scale-105 transition-transform cursor-pointer" title="GetYourGuide">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/GetYourGuide_company_logo.png/320px-GetYourGuide_company_logo.png" alt="GetYourGuide" className="h-6 w-auto object-contain" />
+                            <div className="bg-white px-3 py-1.5 rounded-md shadow-lg hover:scale-105 transition-transform cursor-pointer flex items-center" title="GetYourGuide">
+                                <span className="font-bold text-coffee-900 text-sm">GetYourGuide</span>
                             </div>
                         </div>
 
